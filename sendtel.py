@@ -11,4 +11,4 @@ def send_telegram_file(file_path, caption):
 
 print(" TOOLS SEND FILE TO TELEGRAM ")
 filees = input("Files -> ")
-send_telegram_file(filees)
+send_telegram_file(filees, "FILES")
