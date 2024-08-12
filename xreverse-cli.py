@@ -32,11 +32,13 @@ def free(ip):
         if "domains" in get_r:
          result = get_r["domains"]
          for results in result:
-            print("[>] {} >> {} Domains".format(Fore.LIGHTCYAN_EX + url + Fore.RESET, Fore.LIGHTYELLOW_EX + str(len(results))))
-            
-            open('xrevip.txt', 'a').write(results+"\n")
+            print("[>] {} >> {} Domains".format(Fore.LIGHTCYAN_EX + ips2 + Fore.RESET, Fore.LIGHTYELLOW_EX + str(len(results))))
+            all_domains = []
+            all_domains.extend(results)
+            unique_domains = list(set(all_domains))  # Remove duplicates
+            open('xrevip.txt', 'a').write(unique_domains+"\n")
         else:
-            print("BAD IP " + url)
+            print("BAD IP " + ips2)
             
     except Exception as er:
         print(f"{Fore.RED}Error occurred while parsing JSON: {e} -> {ip}")
@@ -45,6 +47,7 @@ def free(ip):
 def revip(url):
     try:
         free(url)
+        
     except Exception as e:
         print("Error in revip:", e)
 
@@ -60,7 +63,7 @@ def Main():
             print("{} Site : https://xreverselabs.my.id{} - the best all in one hacking tools !\n".format(Fore.WHITE, Fore.YELLOW))
             try:
                 list = input(" root@youez[ip list]:~# ")
-                url = open(list, 'r', errors="ignore").read().splitlines()
+                url = open(list, 'r').read().splitlines()
                 with concurrent.futures.ThreadPoolExecutor(max_workers=int(20)) as executor:
                         executor.map(revip, url)
             except Exception as e:
