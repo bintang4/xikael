@@ -60,7 +60,7 @@ def Main():
             print("{} Site : https://xreverselabs.my.id{} - the best all in one hacking tools !\n".format(Fore.WHITE, Fore.YELLOW))
             try:
                 list = input(" root@youez[ip list]:~# ")
-                url = open(list, 'r').read().splitlines()
+                url = open(list, 'r', errors="ignore").read().splitlines()
                 with concurrent.futures.ThreadPoolExecutor(max_workers=int(20)) as executor:
                         executor.map(revip, url)
             except Exception as e:
