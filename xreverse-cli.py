@@ -28,17 +28,18 @@ def free(ip):
         ips.append(url)
         with httpx.Client() as client:
             response = client.get("https://apiv2.xreverselabs.my.id/?apiKey=ralph&ip="+url, headers=headers)
-            
         get_r = response.json()
-        result = get_r["domains"]
-        for results in result:
+        if "domains" in get_r:
+         result = get_r["domains"]
+         for results in result:
             print("[>] {} >> {} Domains".format(Fore.LIGHTCYAN_EX + url + Fore.RESET, Fore.LIGHTYELLOW_EX + str(len(results))))
             
-            open('xReverseResult.txt', 'a').write(results+"\n")
+            open('xrevip.txt', 'a').write(results+"\n")
         else:
             print("BAD IP " + url)
+            
     except Exception as er:
-        print(er)
+        print(f"{Fore.RED}Error occurred while parsing JSON: {e} -> {ip}")
         #pass
 
 def revip(url):
