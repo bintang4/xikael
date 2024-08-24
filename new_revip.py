@@ -33,14 +33,14 @@ def fetch_results_from_api_1(ip: str) -> list:
     """
     Fetch domains associated with an IP from the first API.
     """
-    url = f'https://apiv2.xreverselabs.my.id/?apiKey=ralph&ip={ip}'
+    url = f'https://api.webscan.cc/?action=query&ip={ip}'
     domains = []
     response = fetch_data_from_url(url)
     if response.text != 'null':
         try:
             json_response = response.json()
             for domain in json_response:
-                domains.append(domain['domains'])
+                domains.append(domain['domain'])
         except Exception as e:
             print(f"{Fore.RED}Error occurred while parsing JSON: {e} -> {ip}")
     return domains
