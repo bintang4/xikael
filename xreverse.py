@@ -37,7 +37,7 @@ def reverse_ip(ips):
         if response.status_code == 200:
             data = response.json()
             domains = data.get('domains', [])
-            with open('xrevip.txt', 'a') as f:
+            with open('xreverseip.txt', 'a') as f:
                 for domain in domains:
                     f.write(domain + '\n')
             count = len(domains)
