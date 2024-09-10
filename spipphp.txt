@@ -1,3 +1,4 @@
+https://www.diplomatie.gouv.fr/en/
 http://egaliteetreconciliation.fr/
 https://registraduria.gov.co/
 https://lefaso.net/
@@ -14,6 +15,7 @@ https://www.madagascar-tribune.com/
 http://www.atoute.org/n/
 https://motorsport.nextgen-auto.com/fr/
 https://diwanalarab.com/
+http://a-suivre.org/asso/index.html
 http://www.catholique.org/
 https://linuxfr.org/
 https://www.avoir-alire.com/
@@ -94,7 +96,6 @@ https://www.ultimora.news/
 https://franceaudiovisuel.tv/
 https://www.francejka.com/
 http://educonline.net/
-https://www.assembleenationale.bf/
 https://www.edago.fr/
 https://regionreunion.com/
 https://seenthis.net/
@@ -151,13 +152,11 @@ https://evangelizadorasdelosapostoles.wordpress.com/
 http://tamazgha.fr/
 https://adjectif.net/
 http://collegeandernos.fr/
-https://sefarim.fr/
 https://www.mujeresenred.net/
 https://krapooarboricole.wordpress.com/
 https://mojacukrzyca.org/
 https://aplv-languesmodernes.org/
 https://www.francetransactions.com/
-http://www.initerm.net/
 http://cfppah.free.fr/
 https://maitre-eolas.fr/
 https://www.meteolux.lu/?lang=fr
@@ -230,7 +229,7 @@ http://jazzstation.be/?lang=fr
 http://supermath.info/
 http://matierevolution.fr/
 https://www.chu-limoges.fr/
-https://www.patrice.biotechno.fr/scenari/Presentation_gen_site/co/accueil.html
+http://biotechno.fr/
 http://grandinetti.org/
 https://publicaffairsjobs.blogspot.com/
 https://www.corian.uk/
@@ -239,7 +238,6 @@ https://www.ons.dz/
 https://www.bilp.fr/
 http://www.css3create.com/
 https://dou-shkola.ru/
-http://papelesdesociedad.info/
 https://www.cari.be/?lang=fr
 https://formation-bruxelles.be/
 http://geotheque.org/
@@ -283,6 +281,7 @@ https://lexmachine.fr/
 https://www.onsexprime.fr/
 http://lajourneedumanuscrit.com/
 https://www.ele-ve.com.ar/
+http://saodomingos.pb.gov.br/
 http://blogyy.net/
 https://www.osi-genevaforum.org/
 https://negawatt.org/
@@ -557,7 +556,7 @@ http://rap-relais-accueil-proximite.fr/
 https://4serv.net/
 https://www.maisondesjournalistes.org/
 http://stopaugazdeschiste07.org/
-http://www.heureux-cyclage.org/?lang=fr
+https://www.heureux-cyclage.org/?lang=fr
 https://aesthethika.org/
 https://www.closdeslys.com/
 http://editions-anacharsis.com/
@@ -573,6 +572,7 @@ http://psgmag.net/
 https://www.resam.net/
 http://atelierdecreationlibertaire.com/
 http://i-filippini.net/
+https://planete-sonic.com/
 http://lagrandeboucle.com/
 http://ecorev.org/
 https://liminaire.fr/
@@ -592,6 +592,7 @@ http://entremonde.net/
 http://geopolitico.info/
 https://komanilel.org/
 http://comiteperform.ca/
+http://otchine.com/
 https://www.ceea.edu/
 https://www.cliniquesaintaubin.com/
 https://www.bilan-ps.fr/
